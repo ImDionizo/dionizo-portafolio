@@ -1,0 +1,19 @@
+<section class="page">
+  <h1>{{ i18n.t('Perfil & Stack') }}</h1>
+  <p class="intro">
+    {{ i18n.t('Ingeniero en computación. Trabajo en capas: la interfaz, la lógica del servidor y la infraestructura que las sostiene.') }}
+  </p>
+
+  <div class="layers">
+    @for (layer of layers; track layer.title) {
+      <article class="layer" [class.highlight]="layer.highlight">
+        <h2>{{ i18n.t(layer.title) }}</h2>
+        <ul>
+          @for (item of layer.items; track item) {
+            <li>{{ i18n.t(item) }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

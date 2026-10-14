@@ -1,0 +1,42 @@
+<section class="page">
+  <a class="back" routerLink="/proyectos">{{ i18n.t('← Volver a proyectos') }}</a>
+
+  @if (project(); as p) {
+    <span class="category">{{ i18n.t(categoryLabels[p.category]) }}</span>
+    <h1>{{ i18n.t(p.title) }}</h1>
+    <p class="summary">{{ i18n.t(p.summary) }}</p>
+
+    <ul class="stack" [attr.aria-label]="i18n.t('Stack tecnológico')">
+      @for (tech of p.stack; track tech) {
+        <li>{{ tech }}</li>
+      }
+    </ul>
+
+    @for (paragraph of p.details ?? []; track $index) {
+      <p class="details">{{ i18n.t(paragraph) }}</p>
+    }
+
+    <div class="media">
+      @for (m of p.media ?? []; track m.src) {
+        <figure>
+          @if (m.type === 'video') {
+            <video [src]="m.src" controls muted loop playsinline></video>
+          } @else {
+            <img [src]="m.src" [alt]="i18n.t(m.alt)" loading="lazy" />
+          }
+          @if (m.caption) {
+            <figcaption>{{ i18n.t(m.caption) }}</figcaption>
+          }
+        </figure>
+      } @empty {
+        <div class="placeholder">{{ i18n.t('Capturas y GIFs de este proyecto: próximamente.') }}</div>
+      }
+    </div>
+
+    @if (p.url) {
+      <a class="external" [href]="p.url" target="_blank" rel="noopener">{{ i18n.t('Ver proyecto →') }}</a>
+    }
+  } @else {
+    <p>{{ i18n.t('Proyecto no encontrado.') }}</p>
+  }
+</section>

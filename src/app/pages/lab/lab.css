@@ -1,0 +1,27 @@
+.intro {
+  color: var(--muted);
+}
+
+.empty {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.empty p {
+  margin: 0;
+}

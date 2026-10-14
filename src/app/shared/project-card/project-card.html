@@ -1,0 +1,11 @@
+<a class="card" [routerLink]="['/proyectos', project().slug]">
+  <span class="category">{{ i18n.t(categoryLabels[project().category]) }}</span>
+  <h3>{{ i18n.t(project().title) }}</h3>
+  <p class="summary">{{ i18n.t(project().summary) }}</p>
+  <ul class="stack" [attr.aria-label]="i18n.t('Stack tecnológico')">
+    @for (tech of project().stack; track tech) {
+      <li>{{ tech }}</li>
+    }
+  </ul>
+  <span class="more">{{ i18n.t('Ver detalle →') }}</span>
+</a>

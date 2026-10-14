@@ -1,0 +1,36 @@
+.intro {
+  max-width: 640px;
+  color: var(--muted);
+}
+
+.layers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.layer {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.layer.highlight {
+  border-color: var(--accent);
+}
+
+.layer h2 {
+  font-size: 1.1rem;
+}
+
+.layer ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.layer li {
+  margin: 0.25rem 0;
+}

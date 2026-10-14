@@ -1,0 +1,20 @@
+<section class="page">
+  <h1>{{ i18n.t('Proyectos') }}</h1>
+
+  <div class="filters" role="group" [attr.aria-label]="i18n.t('Filtrar por categoría')">
+    @for (f of filters; track f.value) {
+      <button
+        type="button"
+        [class.active]="active() === f.value"
+        [attr.aria-pressed]="active() === f.value"
+        (click)="active.set(f.value)"
+      >{{ i18n.t(f.label) }}</button>
+    }
+  </div>
+
+  <div class="grid">
+    @for (project of visible(); track project.title) {
+      <app-project-card [project]="project" />
+    }
+  </div>
+</section>

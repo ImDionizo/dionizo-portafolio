@@ -1,0 +1,41 @@
+<header class="navbar">
+  <a routerLink="/" class="brand" (click)="close()">dionizo<span aria-hidden="true">_</span></a>
+  <button
+    type="button"
+    class="toggle"
+    aria-controls="main-nav"
+    [attr.aria-expanded]="open()"
+    [attr.aria-label]="i18n.t(open() ? 'Cerrar menú' : 'Abrir menú')"
+    (click)="open.set(!open())"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav id="main-nav" [attr.aria-label]="i18n.t('Principal')" [class.open]="open()">
+    @for (link of links; track link.path) {
+      <a
+        class="tab"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: link.exact }"
+        (click)="close()"
+      >{{ i18n.t(link.label) }}</a>
+    }
+  </nav>
+  <div class="lang-switch" role="group" [attr.aria-label]="i18n.t('Idioma')">
+    @for (l of langs; track l.code) {
+      <button
+        type="button"
+        class="lang-btn"
+        [attr.aria-pressed]="i18n.lang() === l.code"
+        [attr.aria-label]="l.name"
+        [title]="l.name"
+        (click)="i18n.set(l.code)"
+      >
+        <span aria-hidden="true">{{ l.flag }}</span>
+        {{ l.code }}
+      </button>
+    }
+  </div>
+</header>

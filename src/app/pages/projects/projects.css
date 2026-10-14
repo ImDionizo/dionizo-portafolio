@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.filters button {
+  padding: 0.4rem 1rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  color: var(--text);
+}
+
+.filters button.active {
+  color: var(--bg);
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}

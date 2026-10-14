@@ -1,0 +1,25 @@
+<section class="page">
+  <header class="hero">
+    <p class="eyebrow">~ $ whoami</p>
+    <h1>Dionizo</h1>
+    <p class="role">{{ i18n.t('Ingeniero en computación · Frontend, Linux e infraestructura') }}</p>
+    <p class="manifesto">
+      {{ i18n.t('Construyo interfaces claras y sistemas que se mantienen solos: código limpio, servidores bien configurados y redes seguras.') }}
+    </p>
+  </header>
+
+  <section class="soon" aria-labelledby="soon-title">
+    <span class="badge">{{ i18n.t('Próximamente') }}</span>
+    <h2 id="soon-title">{{ i18n.t('SaaS y herramientas en desarrollo') }}</h2>
+    <p>{{ i18n.t('Estoy preparando herramientas propias. Aquí aparecerán cuando estén listas.') }}</p>
+  </section>
+
+  <section class="shortcuts" [attr.aria-label]="i18n.t('Secciones')">
+    @for (item of shortcuts; track item.path) {
+      <a class="shortcut" [routerLink]="item.path">
+        <h3>{{ i18n.t(item.label) }} →</h3>
+        <p>{{ i18n.t(item.desc) }}</p>
+      </a>
+    }
+  </section>
+</section>

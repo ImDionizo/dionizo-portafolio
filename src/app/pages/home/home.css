@@ -1,0 +1,80 @@
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-family: ui-monospace, monospace;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.role {
+  margin: 0 0 1rem;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.manifesto {
+  max-width: 640px;
+  color: var(--muted);
+}
+
+.soon {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+}
+
+.soon p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.shortcut {
+  display: block;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.shortcut:hover {
+  border-color: var(--accent-2);
+}
+
+.shortcut h3 {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.shortcut p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
